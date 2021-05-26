@@ -1,10 +1,11 @@
 #!/bin/bash
 # Title		: vm-init.sh
 # Description	: A script to do some CloudCenter node initialization stuff, e.g. create user, add keys, etc.
-# Author	: jasgrimm
-# Date		: 2018-04-03
-# Version	: 0.1
-# Usage		: bash vm-init.sh
+# Original author	: jasgrimm
+# Expanded by: Dragoonix2000
+# Date		: 2021-26-05
+# Version	: 0.2
+# Usage		: bash vminit.sh
 # External Vars	: Read in at run time via global paramater - $MY_USER, $MY_KEY
 # Internal Vars	: Initialized within srcipt - $CLIQR_HOME
 
