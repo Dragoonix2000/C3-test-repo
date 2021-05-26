@@ -36,9 +36,9 @@ fi
 
 #LOG VARIABELS
 touch /home/cliqruser/test.txt
-echo $MY_KEY >> /home/cliqruser/test.txt
+echo -n $MY_KEY >> /home/cliqruser/test.txt
 echo "##user##" >> /home/cliqruser/test.txt
-echo $MY_USER >> /home/cliqruser/test.txt
+echo -n $MY_USER >> /home/cliqruser/test.txt
 
 ## Add user to sudoers
 #sudo agentSendLogMessage "Adding cliqruser and $MY_USER users to sudoers..."
@@ -50,7 +50,7 @@ sudo -i bash -c "echo \"$MY_USER  ALL= NOPASSWD: ALL\" >> /etc/sudoers"
 ## Insert keys for new user
 sudo agentSendLogMessage "Adding a new key to cliqruser and $MY_USER authorized_keys..."
 echo "## Dynamically inserted key ##" >> /home/cliqruser/.ssh/authorized_keys
-echo $MY_KEY >> /home/cliqruser/.ssh/authorized_keys
+echo -n $MY_KEY >> /home/cliqruser/.ssh/authorized_keys
 sudo bash -c "echo \"## Dynamically inserted key ##\" >> /home/$MY_USER/.ssh/authorized_keys"
 sudo bash -c "echo $MY_KEY >> /home/$MY_USER/.ssh/authorized_keys"
 
