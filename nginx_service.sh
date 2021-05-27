@@ -16,10 +16,12 @@ case $cmd in
 		log "[INSTALL] Installing $SVCNAME"
 		sudo apt-get update
 		sudo apt-get install -y nginx
+		sudo apt-get install -y unzip
 		;;
     deploy)
 		log "[DEPLOY] Deploying $SVCNAME"
-		curl -O $nginxAppFile
+		wget $nginxAppFile
+		unzip $nginxAppZip
 		;;
     configure)
 		log "[CONFIGURE] Configuring $SVCNAME"
