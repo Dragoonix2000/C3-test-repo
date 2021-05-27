@@ -14,8 +14,6 @@ USER_ENV="/usr/local/osmosix/etc/userenv"
 case $cmd in
     install)
 		log "[INSTALL] Installing $SVCNAME"
-		sudo apt-get update
-		sudo apt-get install -y nginx
 		;;
     deploy)
 		log "[DEPLOY] Deploying $SVCNAME"
@@ -29,7 +27,6 @@ case $cmd in
 		$cliqrUserScript 1 $cliqrUserScriptParams
 		fi
 		log "[START] Starting $SVCNAME"
-		sudo systemctl start nginx
 		if [ ! -z $cliqrUserScript -a -f $cliqrUserScript ]; then
 		log "[START] Invoking post-start user script"
 		$cliqrUserScript 2 $cliqrUserScriptParams
