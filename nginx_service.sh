@@ -19,6 +19,7 @@ case $cmd in
 		;;
     deploy)
 		log "[DEPLOY] Deploying $SVCNAME"
+		curl -O $nginxAppFile
 		;;
     configure)
 		log "[CONFIGURE] Configuring $SVCNAME"
