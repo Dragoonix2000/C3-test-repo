@@ -20,9 +20,13 @@ case $cmd in
 		;;
     deploy)
 		log "[DEPLOY] Deploying $SVCNAME"
-		log "VARIABLES" $nginxAppFile "AND" $nginxAppZip
 		wget $nginxAppFile
-		unzip /opt/remoteFiles/nginxAppFile/$nginxAppZip
+		sudo unzip /opt/remoteFiles/nginxAppFile/$nginxAppZip -d /opt/remoteFiles/nginxAppFile/
+		sudo mkdir /etc/nginx/www
+		sudo cp /opt/remoteFiles/nginxAppFile/index.html /etc/nginx/www/index.html
+		sudo cp /opt/remoteFiles/nginxAppFile/nginx.conf /etc/nginx/www/nginx.conf
+		sudo systemctl restart nginx.service
+		
 		;;
     configure)
 		log "[CONFIGURE] Configuring $SVCNAME"
