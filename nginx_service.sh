@@ -20,8 +20,9 @@ case $cmd in
 		;;
     deploy)
 		log "[DEPLOY] Deploying $SVCNAME"
+		log "VARIABLES" $nginxAppFile "AND" $nginxAppZip
 		wget $nginxAppFile
-		unzip $nginxAppZip
+		unzip /opt/remoteFiles/nginxAppFile/$nginxAppZip
 		;;
     configure)
 		log "[CONFIGURE] Configuring $SVCNAME"
