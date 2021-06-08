@@ -13,12 +13,12 @@ USER_ENV="/usr/local/osmosix/etc/userenv"
 
 case $cmd in
     install)
-
-		;;
-    deploy)
 		sudo apt-get update
 		sudo apt-get install -y nginx
 		sudo apt-get install -y unzip
+		;;
+    deploy)
+
 		;;
     configure)
 		wget $nginxAppFile
