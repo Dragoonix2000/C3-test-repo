@@ -7,8 +7,6 @@ OSSVC_HOME=/usr/local/osmosix/service
 . $OSSVC_HOME/utils/install_util.sh
 . $OSSVC_HOME/utils/os_info_util.sh
 cmd=$1
-SVCNAME="dummy"
-SVCHOME="$OSSVC_HOME/$SVCNAME"
 USER_ENV="/usr/local/osmosix/etc/userenv"
 
 case $cmd in
