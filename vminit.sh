@@ -53,4 +53,15 @@ echo -n $MY_KEY >> /home/cliqruser/.ssh/authorized_keys
 sudo bash -c "echo \"## Dynamically inserted key ##\" >> /home/$MY_USER/.ssh/authorized_keys"
 sudo bash -c "echo $MY_KEY >> /home/$MY_USER/.ssh/authorized_keys"
 
+#install service
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo apt-get install -y unzip
+wget $nginxAppFile
+sudo unzip /opt/remoteFiles/nginxAppFile/$nginxAppZip -d /opt/remoteFiles/nginxAppFile/
+sudo mkdir /etc/nginx/www
+sudo cp /opt/remoteFiles/nginxAppFile/index.html /etc/nginx/www/index.html
+sudo cp /opt/remoteFiles/nginxAppFile/nginx.conf /etc/nginx/nginx.conf
+sudo systemctl restart nginx.service
+
 exit 0
