@@ -10,13 +10,11 @@ main entry
 case
 $1 in
     install)
-		log "[INSTALL] Installing $SVCNAME"
 		sudo apt-get update
 		sudo apt-get install -y nginx
 		sudo apt-get install -y unzip
 		;;
     deploy)
-		log "[DEPLOY] Deploying $SVCNAME"
 		wget $nginxAppFile
 		sudo unzip /opt/remoteFiles/nginxAppFile/$nginxAppZip -d /opt/remoteFiles/nginxAppFile/
 		sudo mkdir /etc/nginx/www
@@ -37,10 +35,8 @@ $1 in
     cleanup)
 		;;
     upgrade)
-		log "[UPGRADE] Upgrading."
 		;;
     *)
-		log "[ERROR] unknown command"
 		exit 127
 		;;
 esac
