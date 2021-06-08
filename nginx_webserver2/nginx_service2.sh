@@ -18,15 +18,14 @@ case $cmd in
 		sudo apt-get install -y unzip
 		;;
     deploy)
-
-		;;
-    configure)
 		wget $nginxAppFile
 		sudo unzip /opt/remoteFiles/nginxAppFile/$nginxAppZip -d /opt/remoteFiles/nginxAppFile/
 		sudo mkdir /etc/nginx/www
 		sudo cp /opt/remoteFiles/nginxAppFile/index.html /etc/nginx/www/index.html
 		sudo cp /opt/remoteFiles/nginxAppFile/nginx.conf /etc/nginx/nginx.conf
 		sudo systemctl restart nginx.service
+		;;
+    configure)
 		;;
     start)
 		;;
